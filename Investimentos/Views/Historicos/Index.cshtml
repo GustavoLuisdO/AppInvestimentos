@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Investimentos.Models.Historico>
+@{
+    ViewData["Title"] = "Histórico";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-sm btn-default">Criar Novo</a>
+</p>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Negociacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.C_V)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoMercado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PapelId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Preco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorOperacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataOperacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Obs)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(itemModel => item.Negociacao)
+                </td>
+                <td>
+                    @Html.DisplayFor(itemModel => item.C_V)
+                </td>
+                <td>
+                    @Html.DisplayFor(itemModel => item.TipoMercado)
+                </td>
+                <td>
+                    @Html.DisplayFor(itemModel => item.PapelId)
+                </td>
+                <td>
+                    @Html.DisplayFor(itemModel => item.Quantidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(itemModel => item.Preco)
+                </td>
+                <td>
+                    @Html.DisplayFor(itemModel => item.ValorOperacao)
+                </td>
+                <td>
+                    @Html.DisplayFor(itemModel => item.DataOperacao)
+                </td>
+                <td>
+                    @Html.DisplayFor(itemModel => item.Obs)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
