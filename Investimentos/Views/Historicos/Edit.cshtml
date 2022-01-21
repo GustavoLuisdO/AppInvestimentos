@@ -1,0 +1,85 @@
+﻿@model Investimentos.Models.Historico
+@{
+    ViewData["Title"] = "Editar Operação";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+
+        <form asp-action="Edit">
+
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label asp-for="Negociacao" class="control-label"></label>
+                <input asp-for="Negociacao" class="form-control" />
+                <span asp-validation-for="Negociacao" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input asp-for="C_V" type="radio" value="C" />
+                <label asp-for="C_V" class="control-label">Compra</label>
+
+                <input asp-for="C_V" type="radio" value="V" />
+                <label asp-for="C_V" class="control-label">Venda</label>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TipoMercado" class="control-label"></label>
+                <input asp-for="TipoMercado" class="form-control" />
+                <span asp-validation-for="TipoMercado" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PapelId" class="control-label"></label>
+                <select asp-for="PapelId" class="form-control" asp-items="@(new SelectList(ViewBag.Papeis, "Id", "Nome"))"></select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Quantidade" class="control-label"></label>
+                <input asp-for="Quantidade" class="form-control" min="1" />
+                <span asp-validation-for="Quantidade" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Preco" class="control-label"></label>
+                <input asp-for="Preco" class="form-control" />
+                <span asp-validation-for="Preco" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ValorOperacao" class="control-label"></label>
+                <input asp-for="ValorOperacao" class="form-control" />
+                <span asp-validation-for="ValorOperacao" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DataOperacao" class="control-label"></label>
+                <input asp-for="DataOperacao" class="form-control" />
+                <span asp-validation-for="DataOperacao" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Obs" class="control-label"></label>
+                <textarea asp-for="Obs" class="form-control"></textarea>
+                <span asp-validation-for="Obs" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">Salvar</button>
+            </div>
+
+        </form>
+
+    </div>
+    <div class="col-md-3"></div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

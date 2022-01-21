@@ -1,0 +1,26 @@
+﻿@model Investimentos.Models.Papel
+@{
+    ViewData["Title"] = "Excluir Papel";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<hr />
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.Nome)</dt>
+        <dd>@Html.DisplayFor(model => model.Nome)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.TipoPapelId)</dt>
+        <dd>@Html.DisplayFor(model => model.TipoPapel.Tipo)</dd>
+    </dl>
+
+    <div class="row">
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-sm btn-default">Excluir</button>
+            <a asp-action="Index">Voltar à Lista</a>
+        </form>
+    </div>
+</div>
