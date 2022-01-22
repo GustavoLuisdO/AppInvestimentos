@@ -21,7 +21,13 @@
             <th>
                 @Html.DisplayNameFor(model => model.PrecoMedio)
             </th>
-            <th></th>
+            <th>
+                <div class="panel panel-default" style="margin: 0;">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"><strong>Total Investido = R$ @Model.Sum(obj => obj.Total()).ToString("F2")</strong></h4>
+                    </div>
+                </div>
+            </th>
         </tr>
     </thead>
 
@@ -38,7 +44,7 @@
                 <td>
                     $ @Html.DisplayFor(itemModel => item.PrecoMedio)
                 </td>
-                <td class="btns" style="width: 60%;">
+                <td class="btns" style="width: 30%;">
                     <abbr title="Editar"><a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-pen"></i></a></abbr> |
                     <abbr title="Detalhes"><a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-info"></i></a></abbr> |
                     <abbr title="Excluir"><a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-trash"></i></a></abbr>
