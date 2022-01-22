@@ -30,5 +30,10 @@ namespace Investimentos.Models
             Quantidade = quantidade;
             PrecoMedio = precoMedio;
         }
+
+        public double Total()
+        {
+            return Quantidade * PrecoMedio;
+        }
     }
 }
