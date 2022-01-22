@@ -3,7 +3,7 @@
     ViewData["Title"] = "Excluir Operação";
 }
 
-<h2>@ViewData["Title"]</h2>
+<h2 class="titulo">@ViewData["Title"]</h2>
 
 <hr />
 
@@ -16,13 +16,13 @@
         <dd>@Html.DisplayFor(model => model.Quantidade)</dd>
 
         <dt>@Html.DisplayNameFor(model => model.PrecoMedio)</dt>
-        <dd>@Html.DisplayFor(model => model.PrecoMedio)</dd>
+        <dd>$ @Html.DisplayFor(model => model.PrecoMedio)</dd>
     </dl>
 
     <div class="row">
         <form asp-action="Delete">
             <input type="hidden" asp-for="Id" />
-            <button type="submit" class="btn btn-sm btn-default">Excluir</button>
+            <button type="submit" class="btn btn-sm btn-danger link-btn">Excluir</button>
             <a asp-action="Index">Voltar à Lista</a>
         </form>
     </div>

@@ -4,11 +4,11 @@
     ViewData["Title"] = "Detalhes";
 }
 
-<h2>@ViewData["Title"]</h2>
+<h2 class="titulo">@ViewData["Title"]</h2>
+
+<hr />
 
 <div>
-    <h4>Tipo de Papel</h4>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Tipo)
@@ -19,6 +19,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-default link-editar">Editar</a>
     <a asp-action="Index">Voltar à Lista</a>
 </div>
