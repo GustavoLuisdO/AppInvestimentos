@@ -3,7 +3,7 @@
     ViewData["Title"] = "Detalhes";
 }
 
-<h2>@ViewData["Title"]</h2>
+<h2 class="titulo">@ViewData["Title"]</h2>
 
 <hr />
 
@@ -25,10 +25,10 @@
         <dd>@Html.DisplayFor(model => model.Quantidade)</dd>
 
         <dt>@Html.DisplayNameFor(model => model.Preco)</dt>
-        <dd>@Html.DisplayFor(model => model.Preco)</dd>
+        <dd>$ @Html.DisplayFor(model => model.Preco)</dd>
 
         <dt>@Html.DisplayNameFor(model => model.ValorOperacao)</dt>
-        <dd>@Html.DisplayFor(model => model.ValorOperacao)</dd>
+        <dd>$ @Html.DisplayFor(model => model.ValorOperacao)</dd>
 
         <dt>@Html.DisplayNameFor(model => model.DataOperacao)</dt>
         <dd>@Html.DisplayFor(model => model.DataOperacao)</dd>
@@ -38,7 +38,7 @@
     </dl>
 
     <div class="row">
-        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-default">Editar</a>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-default link-btn">Editar</a>
         <a asp-action="Index">Voltar à Lista</a>
     </div>
 </div>

@@ -3,7 +3,7 @@
     ViewData["Title"] = "Detalhes";
 }
 
-<h2>@ViewData["Title"]</h2>
+<h2 class="titulo">@ViewData["Title"]</h2>
 
 <hr />
 
@@ -16,11 +16,11 @@
         <dd>@Html.DisplayFor(model => model.Quantidade)</dd>
 
         <dt>@Html.DisplayNameFor(model => model.PrecoMedio)</dt>
-        <dd>@Html.DisplayFor(model => model.PrecoMedio)</dd>
+        <dd>$ @Html.DisplayFor(model => model.PrecoMedio)</dd>
     </dl>
 
     <div class="row">
-        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-default">Editar</a>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-default link-btn">Editar</a>
         <a asp-action="Index">Voltar à Lista</a>
     </div>
 </div>

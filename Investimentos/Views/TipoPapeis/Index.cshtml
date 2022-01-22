@@ -6,8 +6,8 @@
 
 <h2>@ViewData["Title"]</h2>
 
-<p>
-    <a asp-action="Create">Criar Novo</a>
+<p class="btn-criar">
+    <a asp-action="Create" class="btn btn-sm btn-default">Criar Novo</a>
 </p>
 <table class="table table-striped table-hover">
     <thead>
@@ -16,20 +16,22 @@
                 @Html.DisplayNameFor(model => model.Tipo)
             </th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                <th>
                     @Html.DisplayFor(modelItem => item.Tipo)
+                </th>
+                <td class="btns">
+                    <abbr title="Editar"><a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-pen"></i></a></abbr> |
+                    <abbr title="Detalhes"><a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-info"></i></a></abbr> |
+                    <abbr title="Excluir"><a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-trash"></i></a></abbr>
                 </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
-                </td>
+                <td></td>
             </tr>
         }
     </tbody>

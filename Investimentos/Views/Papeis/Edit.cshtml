@@ -3,7 +3,7 @@
     ViewData["Title"] = "Editar Papel";
 }
 
-<h2>@ViewData["Title"]</h2>
+<h2 class="titulo">@ViewData["Title"]</h2>
 
 <hr />
 
@@ -36,6 +36,12 @@
     <div class="col-md-3"></div>
 </div>
 
+<div>
+    <a asp-action="Index">Voltar à Lista</a>
+</div>
+
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

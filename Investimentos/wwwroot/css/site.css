@@ -35,3 +35,25 @@ body {
         display: none;
     }
 }
+
+/* btns >> editar / detalhes / excluir */
+.btns {
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* btns >> criar novo */
+.btn-criar {
+    margin: 15px 0;
+}
+
+/* titulo das pags */
+.titulo {
+    margin: 25px 0;
+}
+
+/* btns com links */
+.link-btn {
+    margin-right: 20px; 
+}

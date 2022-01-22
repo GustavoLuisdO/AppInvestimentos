@@ -3,7 +3,9 @@
     ViewData["Title"] = "Excluir Papel";
 }
 
-<h2>@ViewData["Title"]</h2>
+<h2 class="titulo">@ViewData["Title"]</h2>
+
+<h3>Tem certeza que deseja excluir?</h3>
 
 <hr />
 
@@ -19,7 +21,7 @@
     <div class="row">
         <form asp-action="Delete">
             <input type="hidden" asp-for="Id" />
-            <button type="submit" class="btn btn-sm btn-default">Excluir</button>
+            <button type="submit" class="btn btn-sm btn-danger link-btn">Excluir</button>
             <a asp-action="Index">Voltar à Lista</a>
         </form>
     </div>
