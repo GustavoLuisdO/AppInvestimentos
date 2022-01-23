@@ -11,14 +11,15 @@
 <hr />
 
 <div>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Tipo)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Tipo)
-        </dd>
-    </dl>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <blockquote>
+                
+                <p>@Html.DisplayFor(model => model.Tipo)</p>
+                
+            </blockquote>
+        </div>
+    </div>
 
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />

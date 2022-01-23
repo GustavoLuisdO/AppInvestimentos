@@ -8,18 +8,27 @@
 <hr />
 
 <div>
-    <dl class="dl-horizontal">
-        <dt>@Html.DisplayNameFor(model => model.PapelId)</dt>
-        <dd>@Html.DisplayFor(model => model.Papel.Nome)</dd>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <blockquote>
 
-        <dt>@Html.DisplayNameFor(model => model.Quantidade)</dt>
-        <dd>@Html.DisplayFor(model => model.Quantidade)</dd>
+                <p>@Html.DisplayFor(model => model.Papel.Nome)</p>
 
-        <dt>@Html.DisplayNameFor(model => model.PrecoMedio)</dt>
-        <dd>$ @Html.DisplayFor(model => model.PrecoMedio)</dd>
-    </dl>
+                <footer>
+                    <span>@Html.DisplayNameFor(model=> model.Quantidade)&emsp;&emsp;</span>
+                    <strong>@Html.DisplayFor(model => model.Quantidade)</strong>
+                </footer>
 
-    <div class="row">
+                <footer>
+                    <span>@Html.DisplayNameFor(model=> model.PrecoMedio) &emsp;&nbsp;</span>
+                    <strong>$ @Html.DisplayFor(model => model.PrecoMedio)</strong>
+                </footer>
+
+            </blockquote>
+        </div>
+    </div>
+
+    <div>
         <form asp-action="Delete">
             <input type="hidden" asp-for="Id" />
             <button type="submit" class="btn btn-sm btn-danger link-btn">Excluir</button>
