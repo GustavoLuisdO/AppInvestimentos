@@ -57,3 +57,41 @@ body {
 .link-btn {
     margin-right: 20px; 
 }
+
+/* btn criar novo historico */
+#criar-historico {
+    float: right;
+    line-height: 14px;
+}
+
+/* btn filtrar */
+#btn-filtrar {
+    margin-left: 10px;
+}
+
+/* form de filtro */
+#form-filtro {
+    line-height: 38px;
+}
+input[type=date]{
+    height: 2em;
+}
+
+/* div data maxima */
+#div-dataMax {
+    margin-left: 25px;
+}
+
+/* btn para ir ao topo da pag */
+#btn-topo{
+    float: right;
+    bottom: 15px;
+    right: 35px;
+    position: fixed;
+}
+
+/* btn criar - carteira */
+#criar-carteira{
+    float: right;
+    line-height: 0.4em;
+}

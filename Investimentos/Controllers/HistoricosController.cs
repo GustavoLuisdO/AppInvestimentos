@@ -21,10 +21,21 @@ namespace Investimentos.Controllers
         }
 
         // Carteira GET
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(DateTime? dataMin, DateTime? dataMax)
         {
-            var list = await _historicoService.BuscarTodos();
-            return View(list);
+            if (!dataMin.HasValue)
+            {
+                dataMin = new DateTime(2021, 1, 1);
+            }
+            if (!dataMax.HasValue)
+            {
+                dataMax = DateTime.Now;
+            }
+            ViewData["dataMin"] = dataMin.Value.ToString("yyyy-MM-dd");
+            ViewData["dataMax"] = dataMax.Value.ToString("yyyy-MM-dd");
+
+            var resultado = await _historicoService.BuscaPorData(dataMin, dataMax);
+            return View(resultado);
         }
 
         // Detalhes GET

@@ -21,7 +21,10 @@ namespace Investimentos.Services
         // listar todos
         public async Task<List<Papel>> BuscarTodos()
         {
-            return await _context.Papel.ToListAsync();
+            return await _context.Papel
+                .OrderBy(x => x.Nome)
+                .OrderBy(x => x.TipoPapelId)
+                .ToListAsync();
         }
 
         // buscar por Id
