@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System;
+using System.Linq;
 using Investimentos.Services.Exceptions;
 
 namespace Investimentos.Services
@@ -20,7 +21,9 @@ namespace Investimentos.Services
         // listar todos
         public async Task<List<Carteira>> BuscarTodos()
         {
-            return await _context.Carteira.ToListAsync();
+            return await _context.Carteira
+                .OrderBy(x => x.PapelId)
+                .ToListAsync();
         }
 
         // buscar por id

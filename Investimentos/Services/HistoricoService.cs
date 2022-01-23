@@ -3,6 +3,7 @@ using Investimentos.Models;
 using Investimentos.Services.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -75,6 +76,26 @@ namespace Investimentos.Services
             {
                 throw new IntegrityException("Nenhuma operação que está associado pode ser excluída!");
             }
+        }
+
+        // buscar por data
+        public async Task<List<Historico>> BuscaPorData(DateTime? dataMin, DateTime? dataMax)
+        {
+            var resultado = from obj in _context.Historico select obj;
+
+            if (dataMin.HasValue)
+            {
+                resultado = resultado.Where(x => x.DataOperacao >= dataMin.Value);
+            }
+            if (dataMax.HasValue)
+            {
+                resultado = resultado.Where(x => x.DataOperacao <= dataMax.Value);
+            }
+
+            return await resultado
+                .Include(x => x.Papel)
+                .OrderByDescending(x => x.DataOperacao)
+                .ToListAsync();
         }
     }
 }

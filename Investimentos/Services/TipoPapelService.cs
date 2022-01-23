@@ -3,6 +3,7 @@ using Investimentos.Models;
 using Investimentos.Services.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -20,7 +21,9 @@ namespace Investimentos.Services
         // listar todos
         public async Task<List<TipoPapel>> BuscarTodos()
         {
-            return await _context.TipoPapel.ToListAsync();
+            return await _context.TipoPapel
+                .OrderBy(x => x.Tipo)
+                .ToListAsync();
         }
 
         // buscar por Id

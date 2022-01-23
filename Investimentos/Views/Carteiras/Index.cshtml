@@ -3,11 +3,7 @@
     ViewData["Title"] = "Carteira";
 }
 
-<h2>@ViewData["Title"]</h2>
-
-<p class="btn-criar">
-    <a asp-action="Create" class="btn btn-sm btn-default">Criar Novo</a>
-</p>
+<h2 class="titulo">@ViewData["Title"]</h2>
 
 <table class="table table-striped table-hover">
     <thead>
@@ -24,7 +20,10 @@
             <th>
                 <div class="panel panel-default" style="margin: 0;">
                     <div class="panel-heading">
-                        <h4 class="panel-title"><strong>Total Investido = R$ @Model.Sum(obj => obj.Total()).ToString("F2")</strong></h4>
+                        <h4 class="panel-title">
+                            <strong>Total Investido = R$ @Model.Sum(obj => obj.Total()).ToString("F2")</strong>
+                            <a asp-action="Create" id="criar-carteira" class="btn btn-sm btn-default">Criar Novo</a>
+                        </h4>
                     </div>
                 </div>
             </th>
