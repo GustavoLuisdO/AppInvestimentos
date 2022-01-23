@@ -8,16 +8,21 @@
 <hr />
 
 <div>
-    <dl class="dl-horizontal">
-        <dt>@Html.DisplayNameFor(model => model.Nome)</dt>
-        <dd>@Html.DisplayFor(model => model.Nome)</dd>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <blockquote>
+                
+                <p>@Html.DisplayFor(model => model.Nome)</p>
+                
+                <footer>
+                    <span>@Html.DisplayNameFor(model => model.TipoPapel) &emsp;&emsp;</span>
+                    <strong>@Html.DisplayFor(model => model.TipoPapel.Tipo)</strong>
+                </footer>
 
-        <dt>@Html.DisplayNameFor(model => model.TipoPapelId)</dt>
-        <dd>@Html.DisplayFor(model => model.TipoPapel.Tipo)</dd>
-    </dl>
-
-    <div class="row">
-        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-default link-btn">Editar</a>
-        <a asp-action="Index">Voltar à Lista</a>
+            </blockquote>
+        </div>
     </div>
+
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-default link-btn">Editar</a>
+    <a asp-action="Index">Voltar à Lista</a>
 </div>

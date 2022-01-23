@@ -8,37 +8,56 @@
 <hr />
 
 <div>
-    <dl class="dl-horizontal">
-        <dt>@Html.DisplayNameFor(model => model.Negociacao)</dt>
-        <dd>@Html.DisplayFor(model => model.Negociacao)</dd>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <blockquote>
+                
+                <p>@Html.DisplayFor(model => model.Papel.Nome)</p>
+                
+                <footer>
+                    <span>@Html.DisplayNameFor(model => model.Negociacao)&emsp;&emsp;&emsp;&emsp;&emsp;</span>
+                    <strong tabindex="5">@Html.DisplayFor(model => model.Negociacao)</strong>
+                </footer>
 
-        <dt>@Html.DisplayNameFor(model => model.C_V)</dt>
-        <dd>@Html.DisplayFor(model => model.C_V)</dd>
+                <footer>
+                    <span>@Html.DisplayNameFor(model => model.C_V) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;</span>
+                    <strong>@Html.DisplayFor(model => model.C_V)</strong>
+                </footer>
 
-        <dt>@Html.DisplayNameFor(model => model.TipoMercado)</dt>
-        <dd>@Html.DisplayFor(model => model.TipoMercado)</dd>
+                <footer>
+                    <span>@Html.DisplayNameFor(model => model.TipoMercado) &emsp;&emsp;&nbsp;&nbsp;&nbsp;</span>
+                    <strong>@Html.DisplayFor(model => model.TipoMercado)</strong>
+                </footer>
 
-        <dt>@Html.DisplayNameFor(model => model.PapelId)</dt>
-        <dd>@Html.DisplayFor(model => model.Papel.Nome)</dd>
+                <footer>
+                    <span>@Html.DisplayNameFor(model => model.Quantidade)&emsp;&emsp;&emsp;&emsp;&emsp;</span>
+                    <strong>@Html.DisplayFor(model => model.Quantidade)</strong>
+                </footer>
 
-        <dt>@Html.DisplayNameFor(model => model.Quantidade)</dt>
-        <dd>@Html.DisplayFor(model => model.Quantidade)</dd>
+                <footer>
+                    <span>@Html.DisplayNameFor(model => model.Preco) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span>
+                    <strong>$ @Html.DisplayFor(model => model.Preco)</strong>
+                </footer>
 
-        <dt>@Html.DisplayNameFor(model => model.Preco)</dt>
-        <dd>$ @Html.DisplayFor(model => model.Preco)</dd>
+                <footer>
+                    <span>@Html.DisplayNameFor(model => model.ValorOperacao)&emsp;&emsp;</span>
+                    <strong>$ @Html.DisplayFor(model => model.ValorOperacao)</strong>
+                </footer>
 
-        <dt>@Html.DisplayNameFor(model => model.ValorOperacao)</dt>
-        <dd>$ @Html.DisplayFor(model => model.ValorOperacao)</dd>
+                <footer>
+                    <span>@Html.DisplayNameFor(model => model.DataOperacao) &emsp;&emsp;</span>
+                    <strong>@Html.DisplayFor(model => model.DataOperacao)</strong>
+                </footer>
 
-        <dt>@Html.DisplayNameFor(model => model.DataOperacao)</dt>
-        <dd>@Html.DisplayFor(model => model.DataOperacao)</dd>
+                <footer>
+                    <span>@Html.DisplayNameFor(model => model.Obs) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;</span>
+                    <strong>@Html.DisplayFor(model => model.Obs)</strong>
+                </footer>
 
-        <dt>@Html.DisplayNameFor(model => model.Obs)</dt>
-        <dd>@Html.DisplayFor(model => model.Obs)</dd>
-    </dl>
-
-    <div class="row">
-        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-default link-btn">Editar</a>
-        <a asp-action="Index">Voltar à Lista</a>
+            </blockquote>
+        </div>
     </div>
+
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-default link-btn">Editar</a>
+    <a asp-action="Index">Voltar à Lista</a>
 </div>
