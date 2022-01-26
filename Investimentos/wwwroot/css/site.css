@@ -73,7 +73,7 @@ body {
 #form-filtro {
     line-height: 38px;
 }
-input[type=date]{
+#form-filtro input[type=date] {
     height: 2em;
 }
 

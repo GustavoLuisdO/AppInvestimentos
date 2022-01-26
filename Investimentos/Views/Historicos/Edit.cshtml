@@ -48,13 +48,19 @@
 
             <div class="form-group">
                 <label asp-for="Preco" class="control-label"></label>
-                <input asp-for="Preco" class="form-control" />
+                <div class="input-group">
+                    <span class="input-group-addon">R$</span>
+                    <input asp-for="Preco" class="form-control" />
+                </div>
                 <span asp-validation-for="Preco" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="ValorOperacao" class="control-label"></label>
-                <input asp-for="ValorOperacao" class="form-control" />
+                <div class="input-group">
+                    <span class="input-group-addon">R$</span>
+                    <input asp-for="ValorOperacao" class="form-control" />
+                </div>
                 <span asp-validation-for="ValorOperacao" class="text-danger"></span>
             </div>
 
