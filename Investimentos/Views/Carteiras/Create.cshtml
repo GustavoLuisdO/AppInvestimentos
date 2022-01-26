@@ -26,7 +26,10 @@
 
             <div class="form-group">
                 <label asp-for="PrecoMedio" class="control-label"></label>
-                <input asp-for="PrecoMedio" class="form-control" />
+                <div class="input-group">
+                    <span class="input-group-addon">R$</span>
+                    <input asp-for="PrecoMedio" class="form-control" />
+                </div>
                 <span asp-validation-for="PrecoMedio" class="text-danger"></span>
             </div>
 
